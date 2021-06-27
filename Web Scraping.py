@@ -1,3 +1,4 @@
+from sys import argv
 import numpy as np
 import selenium
 
@@ -16,10 +17,13 @@ html_page = res.content
 #create a soup object
 soup = BeautifulSoup(html_page, 'html.parser') #html.parser
 
+article = soup.find('div',class_ = 'caas-body').text
+
+print(article)
 #text = soup.find_all('div',class_='caas-content-wrapper')
-text = soup.find_all(text=True)
+#text = soup.find_all(text=True)
 
 #print(text)
-print(soup.get_text())
+#print(soup.get_text())
 
 #print(output)
