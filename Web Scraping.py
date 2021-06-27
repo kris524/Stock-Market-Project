@@ -14,12 +14,12 @@ res = requests.get(url)
 html_page = res.content
 
 #create a soup object
-soup = BeautifulSoup(html_page, 'html5lib') #html.parser
+soup = BeautifulSoup(html_page, 'html.parser') #html.parser
 
-text = soup.find_all('div',class_='caas-content-wrapper')
-#text = soup.find_all(text=True)
+#text = soup.find_all('div',class_='caas-content-wrapper')
+text = soup.find_all(text=True)
 
-print(text)
-#print(soup.get_text())
+#print(text)
+print(soup.get_text())
 
 #print(output)
