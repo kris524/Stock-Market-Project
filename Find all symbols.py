@@ -23,24 +23,12 @@ article = soup.find('div',class_ = 'caas-body').text
 #print(article)
 import pandas as pd
 
-df  = pd.read_csv('Stock market project/NYSE.csv')
-df1 = pd.read_csv('Stock market project/AMEX.csv')
-df2 = pd.read_csv('Stock market project/NASDAQ.csv')
 
-#C:\Users\krist\Documents\PYTHON PROJECTS ON VS CODE
-nasdaq = list(df2['Symbol'])
-amex = list(df1['Symbol'])
-nyse = list(df['Symbol'])
-
-symbols = nasdaq + amex + nyse
-#print(nasdaq)
-
-match = [ele for ele in article if ele in symbols]
-print(match)
+df = pd.read_csv('Stock market project/Yahoo.csv')
 
 
-#if res ==True:
-#print(article[0])
- 
+symbols = list(df['Ticker'])
+
+
 matching = [s for s in symbols if s in article]
 print(matching)
