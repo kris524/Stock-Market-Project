@@ -29,6 +29,13 @@ df = pd.read_csv('Stock market project/Yahoo.csv')
 
 symbols = list(df['Ticker'])
 
+#Shoutout to Cogeta from the discord server the data share who helped me fix this.
+#The only tickers that are left however are VOW3.DE and 0175.HK but its not a big issue for now
+words = article.split()
+for i in range(len(words)):
+    words[i] = ''.join(e for e in words[i] if e.isalnum())
 
-matching = [s for s in symbols if s in article]
-print(matching)
+#print(words)
+tickers = set(words)&set(symbols)
+
+print(tickers)
